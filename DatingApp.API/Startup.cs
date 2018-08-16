@@ -43,6 +43,7 @@ namespace DatingApp.AI
                     Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper();
             services.AddTransient<seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
